@@ -1,0 +1,21 @@
+//to uper case without using upper case function
+
+#include <iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    string str="bhjubjUUHUKk";
+  /*  for(int i=0;i<str.size();i++)
+    {
+        str.at(i)-=32;
+    }*/
+    transform(str.begin(),str.end(),str.begin(),::toupper);
+    cout<<str<<endl;
+    
+    transform(str.begin(),str.end(),str.begin(),::tolower);
+    cout<<str;
+    
+    return 0;
+}
