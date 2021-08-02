@@ -1,0 +1,37 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int n,v=0,ma=-999,st=0,maxst=0;
+    cin>>n;
+    cin.ignore();
+    char a[n+1];
+    cin.getline(a,n);
+    cin.ignore();
+    for(int i=0;i<n;i++)
+    {
+       
+       
+        if(a[i]==' ' || a[i]=='\0')
+        {
+            if(ma<v)
+            {
+                ma=v;
+                maxst=st;
+            }
+            st=i+1;
+            v=0;
+        }
+        else 
+         v++;
+         
+        if(a[i]=='\0')
+        break;
+        
+    }
+    cout<<"Maximum length = "<<ma<<endl;
+    for(int i=0;i<ma;i++)
+    cout<<a [i +maxst];
+    return 0;
+}
